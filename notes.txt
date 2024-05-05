@@ -1,0 +1,26 @@
+
+
+add password to users
+hash the password
+    npm i bcrypt
+    npm i -D @types/bcrypt
+
+
+@BeforeInsert()
+  async hashPassword(){
+    const saltOrRound = 10;
+    const hash = await bcrypt.hash(this.password, saltOrRound);
+
+    this.password = hash;
+  }
+
+
+AUTHENTICACION
+
+ npm install @nestjs/passport passport passport-local
+ local.strategy.ts 
+ Guardian
+npm install @nestjs/jwt  -> generar token
+npm install -D @types/passport-local
+npm install -D @types/passport-jwt
+npm install passport-jwt
